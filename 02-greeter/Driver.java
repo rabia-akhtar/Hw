@@ -5,11 +5,11 @@ public class Driver {
     public static void main (String []args ){
 	// declares a local variable g to be of type Greeter 
 
-	Greeter g;
-	System.out.println(g);
-	g = new Greeter();
+        Greeter g;
+	//	System.out.println(g);
+        g = new Greeter();
 	/* new does the following 
-	   1. Allocates enough memory to store Greete r
+	   1. Allocates enough memory to store Greeter
 	   2. Do whatever's needed to setup / initialize 
 	   the memory to be Greeter.
 	   3. return the address of the memory that was allocated.

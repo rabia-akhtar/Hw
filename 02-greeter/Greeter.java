@@ -8,7 +8,7 @@ public class Greeter {
     // methods are functions but they belong to specific classes
     
  
-    public void greet() {
+    public void greet(){
 	System.out.println("Hello world!");
     }
     public void ungreet(){
