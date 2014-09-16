@@ -39,5 +39,9 @@ public - can be accessed from pretty much anywhere
 
 we can gain access to private stuff by calling public methods that 
 can access the private stuff
+
+String - a built in Java class like in Python. Strings are immutable. 
+
+Attributes are instance variables.... kind of like turtle variables.
 */
 
