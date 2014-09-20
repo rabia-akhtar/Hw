@@ -4,8 +4,7 @@ public class Driver {
 	int a = s.indexOf(" ");
 	String firstName = s.substring (0,a);
 	System.out.println (firstName);
-	int b = s.indexOf(" ")+ 1;
-	String lastName = s.substring (b);
+	String lastName = s.substring (a+1);
 	System.out.println (lastName);
 
 }
