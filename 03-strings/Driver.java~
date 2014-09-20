@@ -1,0 +1,14 @@
+class Driver {
+public String firstName {
+int a = s.indexOf(" ");
+String sub = s.substring (0,a);
+return a;
+
+}}
+
+public class Driver {
+    public static void main(String[] args){
+        String s="rabia akhtar";
+	
+    }
+}
