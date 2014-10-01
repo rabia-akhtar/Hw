@@ -47,15 +47,6 @@ public class Loops {
 	return r;
     }
 
-    public String stringYak(String str) {
-	//1 minute 
-	String s = str.replaceAll("yak","");
-	return s;
-    }    public String stringYak(String str) {
-	//1 minute 
-	String s = str.replaceAll("yak","");
-	return s;
-    }
 
     public int stringMatch(String a, String b) {
 	// 9 minutes
