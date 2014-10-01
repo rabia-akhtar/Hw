@@ -28,8 +28,30 @@ public class Loops {
 	}
 	return s;
     }
+    public String stringYak(String str) {
+	/* The easy way would be:
+           String s = str.replaceAll("yak","");
+	   return s;
+           
+           While loop took me about 7 minutes */  
+	int n =str.length();
+	int i = 0;
+	String r ="";
+	while (i<n) {
+	    if ((i<n-2) && (str.charAt(i)=='y') && (str.charAt(i+1)=='a') &&  (str.charAt(i+2)=='k')) 
+		i+=3;
+	    else { r = r +str.charAt(i); 
+		i+=1;
+	    }
+	}
+	return r;
+    }
 
     public String stringYak(String str) {
+	//1 minute 
+	String s = str.replaceAll("yak","");
+	return s;
+    }    public String stringYak(String str) {
 	//1 minute 
 	String s = str.replaceAll("yak","");
 	return s;
