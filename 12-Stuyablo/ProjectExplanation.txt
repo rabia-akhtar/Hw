@@ -1,0 +1,5 @@
+This group consists of me (Rabia Akhtar), Max Fishelson, Sammi Wu Leung, and Thomas Wong.
+We created a game modeled after Avatar: The Last Airbender where the user picks what type 
+of bending they use and has to use a good strategy in order to win. Our code utilizes inheritence
+and encounter is our most important subclass, as it handles most of the game. We would like to expand
+and improve on this project as we move forward. 
