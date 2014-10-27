@@ -1,5 +1,5 @@
 import java.util.*;
-public class  Arraystuff {
+public class  ArrayStuff {
 
     /*--------------------- Instance Variables --------------------*/ 
 
@@ -8,17 +8,24 @@ public class  Arraystuff {
 
     /*--------------------- Constructors --------------------*/ 
 
-    public Arraystuff(int n){
+    public ArrayStuff(int n){
 	rnd = new Random();
 	a = new int[n];
+	for (int i=0; i<a.length;i++){
+	    a[i] = 75+rnd.nextInt(76);
+	}
     }
 
+    public ArrayStuff(){
+	this(100);
+    }
+    
     /*--------------------- Methods --------------------*/ 
 
-    public int find (n){
+    public int find (int n){
 	int result =0;
 	for (int i=0;i<a.length;i++){
-	    if n==a[i] {
+	    if (n==a[i]) {
 		    result=i;
 		    i=a.length;
 		}
@@ -29,7 +36,15 @@ public class  Arraystuff {
 	return result;
     }
 
-return 
+    public int maxVal(){
+	int result =0;
+	for (int i=0;i<a.length;i++){
+	    if (a[i]>result){
+		result=a[i];
+	    }
+	}
+	return result;
+    }
     public String toString(){
 	String s = "";
 	for (int i = 0; i < a.length; i++) {
@@ -40,9 +55,9 @@ return
     /*--------------------- Main --------------------*/ 
 
     public static void main(String[] args) {
-	Arraystuff as = new Arraystuff();
-	System.out.println(as);
-	
+	ArrayStuff as = new ArrayStuff();
+	System.out.println(as.find(78));
+	System.out.println(as.maxVal());
     }
     
 }
