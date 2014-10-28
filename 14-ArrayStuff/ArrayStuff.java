@@ -45,6 +45,16 @@ public class  ArrayStuff {
 	}
 	return result;
     }
+    public int freq(int i){
+	int result = 0;
+	int number =a[i];
+	for (int n=0; n<a.length;n++){
+	    if (a[n]==number){
+		result++;
+	    }
+	}
+	return result;
+    }
     public String toString(){
 	String s = "";
 	for (int i = 0; i < a.length; i++) {
@@ -56,8 +66,10 @@ public class  ArrayStuff {
 
     public static void main(String[] args) {
 	ArrayStuff as = new ArrayStuff();
-	System.out.println(as.find(78));
-	System.out.println(as.maxVal());
+	System.out.println(as.toString());
+	//	System.out.println(as.find(78));
+	//System.out.println(as.maxVal());
+	System.out.println(as.freq(99));
     }
     
 }
