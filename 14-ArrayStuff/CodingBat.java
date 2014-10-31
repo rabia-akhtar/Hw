@@ -47,13 +47,28 @@ public class CodingBat{
 	if (z>0) return true;
 	else return false;
     }
-    // I really don't get how to do canBalance
-public int[] seriesUp(int n) {
-  int length = ((n+1)*n)/2;
-  int[] result = new int[length];
-  int counter =0;
-  for (int i =1;i<=n;i++){
-   for (int a = 1; a <= i; a++,counter++)
-      result[counter] = a;}
-  return result;
-}
+    public boolean canBalance(int[] nums) {
+	boolean result = false;
+	for (int i =0;i<nums.length;i++){
+	    int sone=0;
+	    int stwo=0;
+	    for (int a =0;a<=i;a++){
+		sone+=nums[a];
+	    }
+	    for (int b = i+1; b<nums.length; b++){
+		stwo+=nums[b];
+	    }
+	    if (sone==stwo) result =true;
+	}
+	return result;
+  
+    }
+    public int[] seriesUp(int n) {
+	int length = ((n+1)*n)/2;
+	int[] result = new int[length];
+	int counter =0;
+	for (int i =1;i<=n;i++){
+	    for (int a = 1; a <= i; a++,counter++)
+		result[counter] = a;}
+	return result;
+    }
