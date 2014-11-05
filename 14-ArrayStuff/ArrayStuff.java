@@ -55,6 +55,17 @@ public class  ArrayStuff {
 	}
 	return result;
     }
+    public int mode(){
+	int fr = 0;
+	int result =0;
+	for (int i=0;i<a.length;i++){
+	    if (freq(i)>fr) {
+		fr=freq(i);
+		result=a[i];
+	    }
+	}
+	return result;
+    }
     public String toString(){
 	String s = "";
 	for (int i = 0; i < a.length; i++) {
@@ -69,7 +80,7 @@ public class  ArrayStuff {
 	System.out.println(as.toString());
 	//	System.out.println(as.find(78));
 	//System.out.println(as.maxVal());
-	System.out.println(as.freq(99));
+	System.out.println(as.mode());
     }
     
 }
