@@ -19,12 +19,12 @@ public class Sarray {
 	    newdata[newdata.length-1]=n;
 	}
 	else {
-	    data[last+1]=i;
+	    data[last+1]=n;
 	}
 	return true;
 	    
     }
-
+    /*
     public void  add(int index, int i){
         // adds item i at index, shifting everything down as needed.
         // also grows as needed 
@@ -48,3 +48,4 @@ public class Sarray {
         // returns the old value
     }
 }
+/*
