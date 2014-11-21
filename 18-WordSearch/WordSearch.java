@@ -50,45 +50,36 @@ public class WordSearch {
 	}
 	catch (Exception e){}
     }
-    public void addWordZ(String w, int row, int col, boolean right){
+    public void addWordZ(String w, int row, int col, boolean right, boolean down){
 	try {
 	    int c = row;
 	    int r = row;
 	    for (int i=0; i < w.length();i++){
 		if (board[r][c]==w.charAt(i) || board[r][c]=='.'){
 		    board[r][c] = w.charAt(i);
-		    if (right==true) {
+		    if (right==true && down == true) {
 			r++;
 			c++;}
-		    else{
+		    if (right == false && down == true){
 			r++;
-			c--;}
+			c--;
+		    }
+		    if (right == true && down == false){
+			r--;
+			c--;
+		    }
+		    if (right == false && down == false){
+			r--;
+			c++;
+		    }
+
 		}
 	    }
 	}
 	catch (Exception e){}
     }
 
-    public void addWordZupp(String w, int row, int col, boolean right){
-	try {
-	    int c = row;
-	    int r = row;
-	    for (int i=0; i < w.length();i++){
-		if (board[r][c]==w.charAt(i) || board[r][c]=='.'){
-		    board[r][c] = w.charAt(i);
-		    if (right==true) {
-			r--;
-			c--;}
-		    else{
-			r--;
-			c++;}
-		}
-	    }
-	}
-	catch (Exception e){}
-
-    }
-
+  
 
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
@@ -107,8 +98,8 @@ public class WordSearch {
 	w.addWordV("look",-3,20,true); // test illegal row
 	w.addWordV("look",3,55,true); // test illegal col
 	*/
-	w.addWordZupp("hello",5,15,true); // should work
-	w.addWordZupp("look",15,14,false); // test writing right to left
+	w.addWordZ("hello",5,15,true,false); // should work
+	w.addWordZ("look",15,14,false,false); // test writing right to left
 	System.out.println(w);
     }
 }
