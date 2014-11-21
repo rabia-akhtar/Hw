@@ -50,6 +50,10 @@ public class WordSearch {
 	}
 	catch (Exception e){}
     }
+
+    // this is the horizontal method - the 2 booleans decide which way the word will br printed
+    //  up to down || left to right and vice versa
+ 
     public void addWordZ(String w, int row, int col, boolean right, boolean down){
 	try {
 	    int c = row;
