@@ -79,8 +79,11 @@ public class WordSearch {
 	catch (Exception e){}
     }
 
-  
+    public boolean addWord (String w){
+	Random r = new Random ();
 
+
+    }
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
 	/*	
