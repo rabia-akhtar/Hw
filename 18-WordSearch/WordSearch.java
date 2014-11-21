@@ -37,7 +37,19 @@ public class WordSearch {
 	}
 	catch (Exception e){}
     }
-		
+    public void addWordV(String w, int row, int col, boolean down){
+	try {
+	    int r = row;
+	    for (int i=0; i < w.length();i++){
+		if (board[r][col]==w.charAt(i) || board[row][c]=='.'){
+		    board[r][col] = w.charAt(i);
+		    if (down==true) r++;
+		    else r--;
+		}
+	    }
+	}
+	catch (Exception e){}
+    }
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
 	w.addWordH("hello",3,15,true); // should work
