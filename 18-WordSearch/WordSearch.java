@@ -41,7 +41,7 @@ public class WordSearch {
 	try {
 	    int r = row;
 	    for (int i=0; i < w.length();i++){
-		if (board[r][col]==w.charAt(i) || board[row][c]=='.'){
+		if (board[r][col]==w.charAt(i) || board[r][col]=='.'){
 		    board[r][col] = w.charAt(i);
 		    if (down==true) r++;
 		    else r--;
@@ -52,12 +52,20 @@ public class WordSearch {
     }
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
+	
 	w.addWordH("hello",3,15,true); // should work
 	w.addWordH("look",1,14,false); // test writing right to left
 	w.addWordH("look",3,14,true); // test illegal overlap
        	w.addWordH("look",3,18,true); // test legal overlap
 	w.addWordH("look",-3,20,true); // test illegal row
 	w.addWordH("look",3,55,true); // test illegal col
+       
+	w.addWordV("hello",3,15,true); // should work
+	w.addWordV("look",1,14,false); // test writing right to left
+	w.addWordV("look",3,14,true); // test illegal overlap
+       	w.addWordV("look",17,18,false); // test legal overlap
+	w.addWordV("look",-3,20,true); // test illegal row
+	w.addWordV("look",3,55,true); // test illegal col
 	System.out.println(w);
     }
 }
