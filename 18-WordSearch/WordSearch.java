@@ -1,3 +1,4 @@
+import java.util.*;
 public class WordSearch {
     private char[][] board;
 
@@ -25,7 +26,7 @@ public class WordSearch {
     }
 
     public void addWordH(String w, int row, int col, boolean right){
-	try {
+
 	    int c = col;
 	    for (int i=0; i < w.length();i++){
 		if (board[row][c]==w.charAt(i) || board[row][c]=='.'){
@@ -34,11 +35,9 @@ public class WordSearch {
 		    else c--;
 		}
 	    }
-	}
-	catch (Exception e){}
     }
     public void addWordV(String w, int row, int col, boolean down){
-	try {
+
 	    int r = row;
 	    for (int i=0; i < w.length();i++){
 		if (board[r][col]==w.charAt(i) || board[r][col]=='.'){
@@ -47,15 +46,14 @@ public class WordSearch {
 		    else r--;
 		}
 	    }
-	}
-	catch (Exception e){}
+
     }
 
     // this is the horizontal method - the 2 booleans decide which way the word will be printed
     //  up to down || left to right and vice versa
  
     public void addWordZ(String w, int row, int col, boolean right, boolean down){
-	try {
+
 	    int c = row;
 	    int r = row;
 	    for (int i=0; i < w.length();i++){
@@ -79,34 +77,37 @@ public class WordSearch {
 
 		}
 	    }
-	}
-	catch (Exception e){}
+	
     }
 
     public boolean addWord (String w){
+	try{
 	Random r = new Random ();
-
+	int row = r.nextInt(20);
+	int col = r.nextInt(40);
+	int m = r.nextInt(3);
+	int rig = r.nextInt(2);
+	boolean ri= true;
+	int d = r.nextInt(2);
+	boolean dow=true;
+	if (rig ==0) ri=true;
+	if (rig==1) ri =false;
+	if (d ==0) dow=true;
+	if (d==1) dow=false;
+	if (m==0)  addWordH (w, row, col, ri);
+	if (m==1) addWordV (w,row,col,ri);
+	if (m==2) addWordZ (w,row,col,ri,dow);
+	return true;
+	}
+	catch (Exception e){
+	    return false;
+		}
 
     }
     public static void main(String[] args) {
 	WordSearch w = new WordSearch();
-	/*	
-	w.addWordH("hello",3,15,true); // should work
-	w.addWordH("look",1,14,false); // test writing right to left
-	w.addWordH("look",3,14,true); // test illegal overlap
-       	w.addWordH("look",3,18,true); // test legal overlap
-	w.addWordH("look",-3,20,true); // test illegal row
-	w.addWordH("look",3,55,true); // test illegal col
-       
-	w.addWordV("hello",3,15,true); // should work
-	w.addWordV("look",1,14,false); // test writing right to left
-	w.addWordV("look",3,14,true); // test illegal overlap
-       	w.addWordV("look",17,18,false); // test legal overlap
-	w.addWordV("look",-3,20,true); // test illegal row
-	w.addWordV("look",3,55,true); // test illegal col
-	*/
-	w.addWordZ("hello",5,15,true,false); // should work
-	w.addWordZ("look",15,14,false,false); // test writing right to left
+	w.addWord("hello"); 
+	w.addWord("look"); 
 	System.out.println(w);
     }
 }
