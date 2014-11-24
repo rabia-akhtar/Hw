@@ -101,9 +101,8 @@ public class WordSearch {
 	}
 	catch (Exception e){
 	    return false;
-	}
+		}
 
     }
   
-
 }
