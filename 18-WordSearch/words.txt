@@ -13,5 +13,10 @@ senior
 spirit
 day
 interview
+programming
+anxiety
+sadness
+depression
+
 
 

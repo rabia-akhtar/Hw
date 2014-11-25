@@ -27,33 +27,64 @@ public class WordSearch {
 
     public void addWordH(String w, int row, int col, boolean right){
 
-	    int c = col;
-	    for (int i=0; i < w.length();i++){
-		if (board[row][c]==w.charAt(i) || board[row][c]=='.'){
-		    board[row][c] = w.charAt(i);
-		    if (right==true) c++;
-		    else c--;
+	int c = col;
+	for (int i=0; i < w.length();i++){
+	    if (right == true) {
+		if (col+w.length()<=board[0].length){
+		    if (board[row][c]==w.charAt(i) || board[row][c]=='.'){
+			board[row][c] = w.charAt(i);
+			c++;		   
+		    }
+		}
+		else {
+		    break;
 		}
 	    }
+	    else {
+		if (w.length()-1<=col){
+		    if (board[row][c]==w.charAt(i) || board[row][c]=='.'){
+			board[row][c] = w.charAt(i);
+			c--;		   
+		    }
+		}
+		else {
+		    break;
+		}
+	    }
+	}
     }
     public void addWordV(String w, int row, int col, boolean down){
-
-	    int r = row;
-	    for (int i=0; i < w.length();i++){
-		if (board[r][col]==w.charAt(i) || board[r][col]=='.'){
-		    board[r][col] = w.charAt(i);
-		    if (down==true) r++;
-		    else r--;
+	int r = row;
+	for (int i=0; i < w.length();i++){
+	    if (down == true) {
+		if (r+w.length()<=board.length){
+		    if (board[r][col]==w.charAt(i) || board[r][col]=='.'){
+			board[r][col] = w.charAt(i);
+			r++;		   
+		    }
+		}
+		else {
+		    break;
 		}
 	    }
-
+	    else {
+		if (w.length()-1<=row){
+		    if (board[r][col]==w.charAt(i) || board[r][col]=='.'){
+			board[r][col] = w.charAt(i);
+			r--;		   
+		    }
+		}
+		else {
+		    break;
+		}
+	    }
+	}
     }
 
     // this is the horizontal method - the 2 booleans decide which way the word will be printed
     //  up to down || left to right and vice versa
  
     public void addWordZ(String w, int row, int col, boolean right, boolean down){
-
 	    int c = row;
 	    int r = row;
 	    for (int i=0; i < w.length();i++){
@@ -104,5 +135,13 @@ public class WordSearch {
 		}
 
     }
-  
+  public static void main(String[] args) {
+	WordSearch w = new WordSearch();
+	w.addWordV("hello",19,18,true);
+	w.addWordV("look",8,5,false);
+	w.addWordV("baaa",13,18,false);
+	System.out.println(w);
+
+  }
+
 }
