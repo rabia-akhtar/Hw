@@ -1,0 +1,1 @@
+My wordsearch now works and reads correctly from the word file. I corrected an out of bounds error today. 
