@@ -1,8 +1,8 @@
 public class Sarray {
-    private int[] data;
+    private String[] data;
     private int last;
     public Sarray() {
-	data = new int[10];
+	data = new String[10];
 	last = -1;
         // set up the initial instance variables
     }
@@ -15,6 +15,8 @@ public class Sarray {
 	return s;
     }
 
+
+    /*
     public boolean add(int n){
         // adds an item to the end of the list, grow if needed
         // returns true
@@ -65,33 +67,33 @@ public class Sarray {
 	}
 	last=index;
     }
-
+    */
   
     public int size() {
 	// returns the number of items in the list (not the array size)
 	int size=last +1;
 	return size;
     }
-    public int get(int index) {
+    public String get(int index) {
 	// returns the item at location index of the list
 	return data[index];
 	/* I'm not sure if this means to exclude the 0's*/
     }
 
-    public int set(int index, int i){
+    public String set(int index, String i){
 	// sets the item at location index to value i
 	// returns the old value. 
-	int old=data[index];
+	String old=data[index];
 	data[index]=i;
 	return old;
     }
 
 
-    public int remove(int index){
+    public String remove(int index){
 	// removes the item at index i
 	// returns the old value
-	int old=data[index];
-	data[index]=0;
+	String old=data[index];
+	data[index]="";
 	return old;
 
     }
