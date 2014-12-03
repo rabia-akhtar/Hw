@@ -4,7 +4,7 @@ public class OrderedSuperArray extends Sarray {
     private String[]data;
     private int last;
     public OrderedSuperArray{
-	super();
+	data =  new String [10];
     }
     // aaron's code helped me see that i could use the add i had already written
     //instead of writing it over
@@ -12,7 +12,7 @@ public class OrderedSuperArray extends Sarray {
 	int res=0;
 	int i=0;
 	while (i<data.length){
-	    if (n.compareTo(data[i]) <=0) {
+	    if (n.compareTo(data[i]) <=0 || data[i] == null) {
 		res=i;
 		break;
 	    }
