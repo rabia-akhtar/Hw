@@ -14,8 +14,6 @@ public class Sarray {
 	}
 	return s;
     }
-
-
     /*
     public boolean add(int n){
         // adds an item to the end of the list, grow if needed
@@ -36,12 +34,12 @@ public class Sarray {
 	last++;
 	return true;	    
     }
-
-    public void  add(int index, int n){
+    */
+    public void  add(int index, String n){
 	// adds item i at index, shifting everything down as needed.
 	// also grows as needed 
 	if (index<=data.length+1){
-	    int []newdata=new int[data.length+1];
+	    String []newdata=new String[data.length+1];
 	    for (int i=0;i<newdata.length;i++){
 		int num=i;
 		if (i==index){
@@ -58,7 +56,7 @@ public class Sarray {
 	    data=newdata;
 	}
 	else{
-	    int[]newdata=new int[index+1];
+	    String[]newdata=new String[index+1];
 	    for (int i=0;i<data.length;i++){
 		newdata[i]=data[i];
 	    }
@@ -67,7 +65,7 @@ public class Sarray {
 	}
 	last=index;
     }
-    */
+  
   
     public int size() {
 	// returns the number of items in the list (not the array size)

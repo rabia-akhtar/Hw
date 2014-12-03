@@ -4,35 +4,27 @@ public class OrderedSuperArray extends Sarray {
     private String[]data;
     private int last;
     public OrderedSuperArray{
-	data = new String [10];
-	last=-1;
+	super();
     }
+    // aaron's code helped me see that i could use the add i had already written
+    //instead of writing it over
     public void add (String n){
+	int res=0;
 	int i=0;
-	while (i<data.length-1){
-	    if (data[i].compareTo(n)>0 && data[i+1].compareTo(n)<=0) {
-		String []newdata=new String[data.length+1];
-		int j=0;
-		int z=0;
-		while (j<newdata.length){
-		    if (j !=i+1){
-		    newdata[j]=data[z];
-		    j++;
-		    z++;
-		    }
-		    else{
-			newdata[j]=n;
-			j++;
-			i++;
-		    }
-		}
-	    }
-	    else{
-		i++;
+	while (i<data.length){
+	    if (n.compareTo(data[i]) <=0) {
+		res=i;
+		break;
 	    }
 	}
+	super.add(n, w);
     }
+    public String set (int index, String w){
+	String old = data[i];
+	super.remove(i);
+	add(w);
+	return old;
+    }
+
 }
-
-
 
