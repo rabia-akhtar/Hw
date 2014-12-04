@@ -1,8 +1,8 @@
 public class Driver {
        public static void  main(String[] args){
-	   Sarray s = new Sarray();
+	   OrderedSuperArray s = new OrderedSuperArray();
 	   System.out.println(s.toString());
-	   s.add(7, "hello");
+	   s.add("c");
 	   System.out.println(s.toString());
 	   System.out.println(s.size());
        }
