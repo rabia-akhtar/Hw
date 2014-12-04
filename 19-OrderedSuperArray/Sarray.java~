@@ -1,10 +1,9 @@
 public class Sarray {
-    int[] data= new int[10];
-    int last;
-
+    private String[] data;
+    private int last;
     public Sarray() {
-	last=-1;
-	
+	data = new String[10];
+	last = -1;
         // set up the initial instance variables
     }
 
@@ -15,30 +14,32 @@ public class Sarray {
 	}
 	return s;
     }
-
+    /*
     public boolean add(int n){
         // adds an item to the end of the list, grow if needed
         // returns true
-	if (last==data.length){
-	    int []newdata=new int[data.length+1];
-	    for (int i=0;i<newdata.length;i++){
-		newdata[i]=data[i];
+	int[] newdata;
+	if(last != (data.length - 1)){
+	    newdata = new int[data.length];
+	    newdata[last+1] = n;
+	}
+	else{
+	    newdata = new int[data.length + 1];
+	    for(int j = 0 ; j < (newdata.length - 1) ; j++){
+		newdata[j] = data[j];
 	    }
-	    newdata[newdata.length-1]=n;
-	    data=newdata;
+	    newdata[last+1] = n;
 	}
-	else {
-	    data[last+1]=n;
-	}
-	return true;
-	    
+	data = newdata;
+	last++;
+	return true;	    
     }
-
-    public void  add(int index, int n){
+    */
+    public void  add(int index, String n){
 	// adds item i at index, shifting everything down as needed.
 	// also grows as needed 
 	if (index<=data.length+1){
-	    int []newdata=new int[data.length+2];
+	    String []newdata=new String[data.length+1];
 	    for (int i=0;i<newdata.length;i++){
 		int num=i;
 		if (i==index){
@@ -55,44 +56,42 @@ public class Sarray {
 	    data=newdata;
 	}
 	else{
-	    int[]newdata=new int[index+1];
+	    String[]newdata=new String[index+1];
 	    for (int i=0;i<data.length;i++){
 		newdata[i]=data[i];
 	    }
 	    newdata[index]=n;
 	    data=newdata;
 	}
+	last=index;
     }
-
+  
   
     public int size() {
 	// returns the number of items in the list (not the array size)
-	int size=0;
-	for (int i=0;i<data.length;i++){
-	    if (data[i]!=0)size++;
-	}
+	int size=last +1;
 	return size;
     }
-    public int get(int index) {
+    public String get(int index) {
 	// returns the item at location index of the list
 	return data[index];
 	/* I'm not sure if this means to exclude the 0's*/
     }
 
-    public int set(int index, int i){
+    public String set(int index, String i){
 	// sets the item at location index to value i
 	// returns the old value. 
-	int old=data[index];
+	String old=data[index];
 	data[index]=i;
 	return old;
     }
 
 
-    public int remove(int index){
+    public String remove(int index){
 	// removes the item at index i
 	// returns the old value
-	int old=data[index];
-	data[index]=0;
+	String old=data[index];
+	data[index]="";
 	return old;
 
     }

@@ -2,7 +2,7 @@ public class Sarray {
     private String[] data;
     private int last;
     public Sarray() {
-	data = new String[10];
+	data =  new String [] {"a","b","d"};
 	last = -1;
         // set up the initial instance variables
     }
@@ -40,17 +40,17 @@ public class Sarray {
 	// also grows as needed 
 	if (index<=data.length+1){
 	    String []newdata=new String[data.length+1];
+	    int num =0;
 	    for (int i=0;i<newdata.length;i++){
-		int num=i;
 		if (i==index){
 		    newdata[i]=n;
 		}
 		else{
 		    if (num<data.length){
 			newdata[i]=data[num];
-			num++;
+		       
 		    }
-		    else num++;
+		    num++;
 		}
 	    }
 	    data=newdata;
@@ -77,7 +77,9 @@ public class Sarray {
 	return data[index];
 	/* I'm not sure if this means to exclude the 0's*/
     }
-
+    public String[] getData(){
+	return data;
+    }
     public String set(int index, String i){
 	// sets the item at location index to value i
 	// returns the old value. 
