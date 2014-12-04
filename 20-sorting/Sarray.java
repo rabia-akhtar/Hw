@@ -14,6 +14,19 @@ public class Sarray {
 	}
 	return s;
     }
+    public void isort(){
+	// Given int array a with last item at index "last"
+	// newvalue is the new value to insert
+	int i;
+	String newvalue;
+	for (int z =0; z<last; z++) {
+	    newvalue = data[z];	    
+	    for (i = z; i > 0 && newvalue.compareTo(data[i-1])<0 ; i--) {
+		data[i] = data[i-1];    
+	    }
+	    data[i]=newvalue;
+	}
+    }
     /*
     public boolean add(int n){
         // adds an item to the end of the list, grow if needed
@@ -66,19 +79,7 @@ public class Sarray {
 	last=index;
     }
   
-    public void isort(){
-	// Given int array a with last item at index "last"
-	// newvalue is the new value to insert
-	int i;
-	String newvalue;
-	for (int z =0; z<last; z++) {
-	    newvalue = data[z];	    
-	    for (i = z; i > 0 && newvalue.compareTo(data[i-1])<0 ; i--) {
-		data[i] = data[i-1];    
-	    }
-	    data[i]=newvalue;
-	}
-    }
+
     public int size() {
 	// returns the number of items in the list (not the array size)
 	int size=last +1;
