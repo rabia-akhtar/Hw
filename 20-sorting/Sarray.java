@@ -27,6 +27,35 @@ public class Sarray {
 	    data[i]=newvalue;
 	}
     }
+    public void ssort(){
+	for (int i = 0; i < data.length ;i++){
+	    String c = data[i];
+	    int index  = i;
+	    for (int j = i; j<data.length ;j++){	     
+		if (data[j].compareTo(c)<0){
+		    c  = data[j];
+		    index = j;
+		}
+	    }
+	    data[index] =data[i];
+	    data[i] = c;
+	}
+    }
+
+    
+    public void bsort() {
+	for (int i =0; i<data.length-1;i++) {
+	    for (int j = 0; j<data.length-1;j++){
+		if (data[j].compareTo(data[j+1]) > 0) {
+		    String z = data[j];
+		    data[j]= data[j+1];
+		    data[j+1]=z;
+
+		}
+	    }
+	}
+    }
+
     /*
     public boolean add(int n){
         // adds an item to the end of the list, grow if needed

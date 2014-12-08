@@ -2,8 +2,8 @@ public class Sarray {
     private String[] data;
     private int last;
     public Sarray() {
-	data =  new String [] {"a","b","d"};
-	last = -1;
+	data =  new String [] {"z","f","e"};
+	last = data.length;
         // set up the initial instance variables
     }
 
@@ -13,6 +13,19 @@ public class Sarray {
 	    s = s + data[i]+", ";
 	}
 	return s;
+    }
+    public void isort(){
+	// Given int array a with last item at index "last"
+	// newvalue is the new value to insert
+	int i;
+	String newvalue;
+	for (int z =0; z<last; z++) {
+	    newvalue = data[z];	    
+	    for (i = z; i > 0 && newvalue.compareTo(data[i-1])<0 ; i--) {
+		data[i] = data[i-1];    
+	    }
+	    data[i]=newvalue;
+	}
     }
     /*
     public boolean add(int n){
@@ -66,7 +79,7 @@ public class Sarray {
 	last=index;
     }
   
-  
+
     public int size() {
 	// returns the number of items in the list (not the array size)
 	int size=last +1;

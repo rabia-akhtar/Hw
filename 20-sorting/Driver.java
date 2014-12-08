@@ -2,7 +2,7 @@ public class Driver {
        public static void  main(String[] args){
 	   OrderedSuperArray s = new OrderedSuperArray();
 	   System.out.println(s.toString());
-	   s.isort();
+	   s.bsort();
 	   System.out.println(s.toString());
        }
 }
