@@ -58,6 +58,22 @@ public class Searching {
 	return null;
     }
 
+    public Comparable rbhelper(Comparable thing, int low, int high) {
+	int middle = (low +high) / 2;
+	if (a[middle].compareTo(thing)<0) {
+	    return rbhelper (thing, middle + 1, high);
+	}
+	if (a[middle].compareTo(thing)>0) {
+	    return rbhelper(thing,low,middle - 1);
+	}
+	else return thing; 
+	
+    }
+    
+
+    public Comparable rbsearch (Comparable thing) {
+	return rbhelper(thing,0,a.length-1);
+	    }
     public static void main(String[] args) {
 	Searching list = new Searching(10);
 	for (int i=0; i<10; i++) {
@@ -67,7 +83,7 @@ public class Searching {
 	list.additem(78,5);
 	list.s();
 	System.out.println(list.toString());
-	System.out.println(list.bsearch(78));
+	System.out.println(list.rbsearch(78));
     }
 
 
