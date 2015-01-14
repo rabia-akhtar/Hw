@@ -1,0 +1,15 @@
+Rabia Akhtar
+Project I am reviewing: Not PvZ 
+https://github.com/RyanTu/APCS-FallProject
+
+General
+
+Gui.java does not have much going on so far. I see that you guy have made the grid that reacts to a mouse using 
+mouselistener and the code is pretty self explanatory. Besides the grid and counter, the game has not really manifested itself. As a major suggestion, 
+I suggest you guys pick up your pace considering how we are nearing the deadline for this project. 
+
+
+Documentation
+
+Obviously, not many people have started their documenation yet so later on definately  
+add comments into your code and flesh out your read me file. 
